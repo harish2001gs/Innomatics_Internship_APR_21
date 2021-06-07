@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="color: blueviolet">Welcome to note making app ---{{ session['username'] }}</h1>
+    <div class="simple">
+    <form action="{{ url_for('index') }}" method="POST">
+        <input type="text" name="note" placeholder="Enter a note">
+        <button>Add Note</button>
+    </form>
+
+    <ul>
+    {% for note in notes%}
+        <li style="color: red">{{ note }}</li>
+    {% endfor %}
+    </ul>
+    </div>
+</body>
+</html>
